@@ -1,0 +1,65 @@
+[build-system]
+build-backend = "uv_build"
+requires = ["uv_build>=0.9.15,<0.10.0"]
+
+[dependency-groups]
+dev = [
+  {include-group = "lint"}
+]
+lint = [
+  {include-group = "pre-commit"}
+]
+pre-commit = [
+  "prek==0.2.28"
+]
+
+[project]
+authors = [
+  {email = "michal@weblate.org", name = "Michal Čihař"}
+]
+classifiers = [
+  "Development Status :: 5 - Production/Stable",
+  "Intended Audience :: Developers",
+  "Operating System :: OS Independent",
+  "Programming Language :: Python :: 3 :: Only",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Programming Language :: Python :: 3.13",
+  "Programming Language :: Python :: 3.14",
+  "Programming Language :: Python",
+  "Topic :: Software Development :: Internationalization",
+  "Topic :: Software Development :: Localization",
+  "Topic :: Utilities"
+]
+description = "Weblate fonts collection"
+keywords = [
+  "gettext",
+  "git",
+  "i18n",
+  "l10n",
+  "mercurial",
+  "translate"
+]
+license = "OFL-1.1"
+license-files = ["LICENSES/OFL-1.1.txt"]
+name = "weblate-fonts"
+readme = "README.md"
+requires-python = ">=3.11"
+version = "2026.1"
+
+[project.urls]
+Documentation = "https://docs.weblate.org/"
+Download = "https://github.com/WeblateOrg/fonts"
+Funding = "https://weblate.org/donate/"
+Homepage = "https://weblate.org/"
+"Issue Tracker" = "https://github.com/WeblateOrg/fonts/issues"
+"Source Code" = "https://github.com/WeblateOrg/fonts"
+Twitter = "https://twitter.com/WeblateOrg"
+
+[tool.tomlsort]
+ignore_case = true
+sort_inline_arrays = true
+sort_inline_tables = true
+sort_table_keys = true
+spaces_before_inline_comment = 2
