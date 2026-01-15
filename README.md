@@ -1,0 +1,2 @@
+# fonts
+Weblate font collection
