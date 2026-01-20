@@ -1,0 +1,106 @@
+# Copyright © Michal Čihař <michal@weblate.org>
+#
+# SPDX-License-Identifier: OFL-1.1
+
+[kurinto-ttf]
+# Used for status widgets in Weblate
+destination = "src/weblate_fonts/static/weblate_fonts/kurinto/ttf"
+extract = [
+  "Fonts/KurintoSans-Bd.ttf",
+  "Fonts/KurintoSans-Rg.ttf",
+  "Fonts_Lang/KurintoSansJP-Bd.ttf",
+  "Fonts_Lang/KurintoSansJP-Rg.ttf",
+  "Fonts_Lang/KurintoSansKR-Bd.ttf",
+  "Fonts_Lang/KurintoSansKR-Rg.ttf",
+  "Fonts_Lang/KurintoSansSC-Bd.ttf",
+  "Fonts_Lang/KurintoSansSC-Rg.ttf",
+  "Fonts_Lang/KurintoSansTC-Bd.ttf",
+  "Fonts_Lang/KurintoSansTC-Rg.ttf"
+]
+url = "https://kurinto.com/zip/Kurinto_v{version}_Full.zip"
+# renovate: datasource=kurinto versioning=loose
+version = "2.197"
+
+[source-code-ttf]
+# Used in CSS
+destination = "src/weblate_fonts/static/weblate_fonts/source-code/ttf"
+extract = [
+  "TTF/SourceCodePro-Black.ttf",
+  "TTF/SourceCodePro-BlackIt.ttf",
+  "TTF/SourceCodePro-Bold.ttf",
+  "TTF/SourceCodePro-BoldIt.ttf",
+  "TTF/SourceCodePro-ExtraLight.ttf",
+  "TTF/SourceCodePro-ExtraLightIt.ttf",
+  "TTF/SourceCodePro-It.ttf",
+  "TTF/SourceCodePro-Light.ttf",
+  "TTF/SourceCodePro-LightIt.ttf",
+  "TTF/SourceCodePro-Medium.ttf",
+  "TTF/SourceCodePro-MediumIt.ttf",
+  "TTF/SourceCodePro-Regular.ttf",
+  "TTF/SourceCodePro-Semibold.ttf",
+  "TTF/SourceCodePro-SemiboldIt.ttf"
+]
+url = "https://github.com/adobe-fonts/source-code-pro/releases/download/{version_quoted}/TTF-source-code-pro-{version_shortened}.zip"
+# renovate: datasource=github-releases depName=adobe-fonts/source-code-pro versioning=loose
+version = "2.042R-u/1.062R-i/1.026R-vf"
+
+[source-code-woff2]
+# Used in CSS
+destination = "src/weblate_fonts/static/weblate_fonts/source-code/woff2"
+extract = [
+  "WOFF2/TTF/SourceCodePro-Black.ttf.woff2",
+  "WOFF2/TTF/SourceCodePro-BlackIt.ttf.woff2",
+  "WOFF2/TTF/SourceCodePro-Bold.ttf.woff2",
+  "WOFF2/TTF/SourceCodePro-BoldIt.ttf.woff2",
+  "WOFF2/TTF/SourceCodePro-ExtraLight.ttf.woff2",
+  "WOFF2/TTF/SourceCodePro-ExtraLightIt.ttf.woff2",
+  "WOFF2/TTF/SourceCodePro-It.ttf.woff2",
+  "WOFF2/TTF/SourceCodePro-Light.ttf.woff2",
+  "WOFF2/TTF/SourceCodePro-LightIt.ttf.woff2",
+  "WOFF2/TTF/SourceCodePro-Medium.ttf.woff2",
+  "WOFF2/TTF/SourceCodePro-MediumIt.ttf.woff2",
+  "WOFF2/TTF/SourceCodePro-Regular.ttf.woff2",
+  "WOFF2/TTF/SourceCodePro-Semibold.ttf.woff2",
+  "WOFF2/TTF/SourceCodePro-SemiboldIt.ttf.woff2"
+]
+url = "https://github.com/adobe-fonts/source-code-pro/releases/download/{version_quoted}/WOFF2-source-code-pro-{version_underscore}.zip"
+# renovate: datasource=github-releases depName=adobe-fonts/source-code-pro versioning=loose
+version = "2.042R-u/1.062R-i/1.026R-vf"
+
+[source-sans-ttf]
+# Used for PDF rendering (website) and widgets (Weblate)
+destination = "src/weblate_fonts/static/weblate_fonts/source-sans/ttf"
+extract = [
+  "TTF/SourceSans3-Black.ttf",
+  "TTF/SourceSans3-Bold.ttf",
+  "TTF/SourceSans3-BoldIt.ttf",
+  "TTF/SourceSans3-ExtraLight.ttf",
+  "TTF/SourceSans3-It.ttf",
+  "TTF/SourceSans3-Light.ttf",
+  "TTF/SourceSans3-Regular.ttf",
+  "TTF/SourceSans3-Semibold.ttf"
+]
+url = "https://github.com/adobe-fonts/source-sans/releases/download/{version}/TTF-source-sans-{version}.zip"
+# renovate: datasource=github-releases depName=adobe-fonts/source-sans versioning=loose
+version = "3.052R"
+
+[source-sans-woff2]
+# Used in CSS
+destination = "src/weblate_fonts/static/weblate_fonts/source-sans/woff2"
+extract = [
+  "WOFF2/TTF/SourceSans3-Black.ttf.woff2",
+  "WOFF2/TTF/SourceSans3-BlackIt.ttf.woff2",
+  "WOFF2/TTF/SourceSans3-Bold.ttf.woff2",
+  "WOFF2/TTF/SourceSans3-BoldIt.ttf.woff2",
+  "WOFF2/TTF/SourceSans3-ExtraLight.ttf.woff2",
+  "WOFF2/TTF/SourceSans3-ExtraLightIt.ttf.woff2",
+  "WOFF2/TTF/SourceSans3-It.ttf.woff2",
+  "WOFF2/TTF/SourceSans3-Light.ttf.woff2",
+  "WOFF2/TTF/SourceSans3-LightIt.ttf.woff2",
+  "WOFF2/TTF/SourceSans3-Regular.ttf.woff2",
+  "WOFF2/TTF/SourceSans3-Semibold.ttf.woff2",
+  "WOFF2/TTF/SourceSans3-SemiboldIt.ttf.woff2"
+]
+url = "https://github.com/adobe-fonts/source-sans/releases/download/{version}/WOFF2-source-sans-{version}.zip"
+# renovate: datasource=github-releases depName=adobe-fonts/source-sans versioning=loose
+version = "3.052R"

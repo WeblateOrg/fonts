@@ -2,5 +2,19 @@
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": [
     "github>WeblateOrg/meta:renovate"
+  ],
+  "customDatasources": {
+    "kurinto": {
+      "defaultRegistryUrlTemplate": "https://kurinto.com/download.htm",
+      "format": "html"
+    }
+  },
+  "packageRules": [
+    {
+      "matchDatasources": [
+        "custom.kurinto"
+      ],
+      "extractVersion": "/Kurinto_v(?<version>.+)_Full\\.zip$"
+    }
   ]
 }
