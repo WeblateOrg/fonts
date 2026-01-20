@@ -6,6 +6,9 @@ name: Distribution
 
 on: [push, pull_request]
 
+permissions:
+  contents: read
+
 jobs:
   setup:
     name: Build packages
@@ -23,8 +26,6 @@ jobs:
         enable-cache: true
         cache-dependency-glob: ''
         version: 0.9.26
-    - name: Install dependencies
-      run: uv pip install --system -e .[dev]
     - name: build sdist
       run: uv build
     - name: twine
@@ -80,5 +81,3 @@ jobs:
       with:
         generateReleaseNotes: true
         artifacts: dist/*
-permissions:
-  contents: read
