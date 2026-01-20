@@ -42,7 +42,10 @@ keywords = [
   "translate"
 ]
 license = "OFL-1.1"
-license-files = ["LICENSES/OFL-1.1.txt"]
+license-files = [
+  "LICENSES/CC0-1.0.txt",
+  "LICENSES/OFL-1.1.txt"
+]
 name = "weblate-fonts"
 readme = "README.md"
 requires-python = ">=3.11"
@@ -56,6 +59,19 @@ Homepage = "https://weblate.org/"
 "Issue Tracker" = "https://github.com/WeblateOrg/fonts/issues"
 "Source Code" = "https://github.com/WeblateOrg/fonts"
 Twitter = "https://twitter.com/WeblateOrg"
+
+[tool.check-manifest]
+ignore = [
+  ".editorconfig",
+  ".markdownlint.yml",
+  ".pre-commit-config.yaml",
+  ".yamllint.yml",
+  "biome.json",
+  "REUSE.toml",
+  "scripts/fonts.toml",
+  "scripts/update-fonts.py",
+  "SECURITY.md"
+]
 
 [tool.tomlsort]
 ignore_case = true
