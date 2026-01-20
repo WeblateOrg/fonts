@@ -18,7 +18,7 @@ extract = [
   "Fonts_Lang/KurintoSansTC-Rg.ttf"
 ]
 url = "https://kurinto.com/zip/Kurinto_v{version}_Full.zip"
-# renovate: datasource=kurinto depName=Kurinto versioning=loose
+# renovate: datasource=custom.kurinto depName=Kurinto versioning=loose
 version = "2.197"
 
 [source-code-ttf]
