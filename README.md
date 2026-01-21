@@ -20,3 +20,13 @@ pip3 install weblate-fonts
 ```
 
 Sources are available at <https://github.com/WeblateOrg/fonts>.
+
+## Bundled fonts
+
+- [Source Code Pro](https://github.com/adobe-fonts/source-code-pro/)
+- [Source Sans 3](https://github.com/adobe-fonts/source-sans/)
+- [Kurinto](https://kurinto.com/)
+
+Only a subset of these fonts is included. The scope of this package only covers
+Weblate needs and is not intended to be a general-purpose font bundle. There is
+no compatibility guaranteed between releases as Weblate pins exact version.
