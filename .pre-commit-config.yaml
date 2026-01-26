@@ -81,7 +81,7 @@ repos:
   - id: biome-check
     args: [--error-on-warnings]
     additional_dependencies:
-    - '@biomejs/biome@2.3.11'
+    - '@biomejs/biome@2.3.12'
 ci:
   autoupdate_schedule: quarterly
   skip:
