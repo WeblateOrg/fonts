@@ -71,7 +71,7 @@ repos:
   - id: biome-check
     args: [--error-on-warnings]
     additional_dependencies:
-    - '@biomejs/biome@2.4.13'
+    - '@biomejs/biome@2.4.14'
 - repo: https://github.com/rvben/rumdl-pre-commit
   rev: v0.1.87
   hooks:
