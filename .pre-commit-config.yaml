@@ -72,6 +72,7 @@ repos:
     args: [--error-on-warnings]
     additional_dependencies:
     - '@biomejs/biome@2.5.7'
+    language: node
 - repo: https://github.com/rvben/rumdl-pre-commit
   rev: v0.2.48
   hooks:
