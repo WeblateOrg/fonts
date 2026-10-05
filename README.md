@@ -1,15 +1,20 @@
-<a href="https://weblate.org/"><img alt="Weblate" src="https://s.weblate.org/cdn/Logo-Darktext-borders.png" height="80px" /></a>
-
-**Weblate is libre software web-based continuous localization system,
-used by over 2500 libre projects and companies in more than 165 countries.**
-
 # Weblate Fonts Collection
-
-Fonts used in Weblate.
 
 [![Website](https://img.shields.io/badge/website-weblate.org-blue.svg)](https://weblate.org/)
 [![CII Best Practices](https://bestpractices.coreinfrastructure.org/projects/552/badge)](https://bestpractices.coreinfrastructure.org/projects/552)
 [![PyPI package](https://img.shields.io/pypi/v/weblate-fonts.svg)](https://pypi.org/project/weblate-fonts/)
+
+Fonts used in Weblate.
+
+<p>
+  <a href="https://weblate.org/">
+    <img alt="Weblate"
+         src="https://s.weblate.org/cdn/Logo-Darktext-borders.png"
+         height="55">
+  </a>
+</p>
+
+Maintained by [Weblate](https://weblate.org/) — a privacy-respecting localization platform built on open-source foundations.
 
 ## PIP Installation
 
