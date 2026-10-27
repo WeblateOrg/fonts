@@ -19,38 +19,38 @@ permissions:
 jobs:
   issue-closed:
     permissions:
-      contents: read  # for actions/checkout
-      issues: write  # for gh issue comment
+      contents: read # for actions/checkout
+      issues: write # for gh issue comment
     runs-on: ubuntu-slim
     steps:
-    - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
-      with:
-        persist-credentials: false
-    - name: Add closed question comment
-      if: |
-        github.actor != 'renovate[bot]' &&
-        github.event.issue.state_reason == 'completed' &&
-        ((
-          contains(github.event.issue.labels.*.name, 'question') &&
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - name: Add closed question comment
+        if: |
+          github.actor != 'renovate[bot]' &&
+          github.event.issue.state_reason == 'completed' &&
+          ((
+            contains(github.event.issue.labels.*.name, 'question') &&
+            ! contains(github.event.issue.labels.*.name, 'duplicate') &&
+            ! contains(github.event.issue.labels.*.name, 'wontfix')
+          ) || join(github.event.issue.labels.*.name) == '')
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          ISSUE_NUMBER: ${{ github.event.issue.number }}
+        run: gh issue comment "$ISSUE_NUMBER" --body-file .github/comments/issue-resolved.md
+      - name: Add closed issue comment
+        if: |
+          github.actor != 'renovate[bot]' &&
+          github.event.issue.state_reason == 'completed' &&
+          ! contains(github.event.issue.labels.*.name, 'invalid') &&
+          ! contains(github.event.issue.labels.*.name, 'question') &&
+          ! contains(github.event.issue.labels.*.name, 'wontfix') &&
           ! contains(github.event.issue.labels.*.name, 'duplicate') &&
-          ! contains(github.event.issue.labels.*.name, 'wontfix')
-        ) || join(github.event.issue.labels.*.name) == '')
-      env:
-        GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        ISSUE_NUMBER: ${{ github.event.issue.number }}
-      run: gh issue comment "$ISSUE_NUMBER" --body-file .github/comments/issue-resolved.md
-    - name: Add closed issue comment
-      if: |
-        github.actor != 'renovate[bot]' &&
-        github.event.issue.state_reason == 'completed' &&
-        ! contains(github.event.issue.labels.*.name, 'invalid') &&
-        ! contains(github.event.issue.labels.*.name, 'question') &&
-        ! contains(github.event.issue.labels.*.name, 'wontfix') &&
-        ! contains(github.event.issue.labels.*.name, 'duplicate') &&
-        ! contains(github.event.issue.labels.*.name, 'undecided') &&
-        ! contains(github.event.issue.labels.*.name, 'needinfo') &&
-        join(github.event.issue.labels.*.name) != ''
-      env:
-        GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        ISSUE_NUMBER: ${{ github.event.issue.number }}
-      run: gh issue comment "$ISSUE_NUMBER" --body-file .github/comments/issue-fixed.md
+          ! contains(github.event.issue.labels.*.name, 'undecided') &&
+          ! contains(github.event.issue.labels.*.name, 'needinfo') &&
+          join(github.event.issue.labels.*.name) != ''
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          ISSUE_NUMBER: ${{ github.event.issue.number }}
+        run: gh issue comment "$ISSUE_NUMBER" --body-file .github/comments/issue-fixed.md
