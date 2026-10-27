@@ -7,15 +7,15 @@
 changelog:
   exclude:
     authors:
-    - weblate
-    - hosted-weblate[bot]
+      - weblate
+      - hosted-weblate[bot]
   categories:
-  - title: Changes and improvements
-    labels:
-    - '*'
-    exclude:
+    - title: Changes and improvements
       labels:
-      - dependencies
-  - title: Dependency updates
-    labels:
-    - dependencies
+        - "*"
+      exclude:
+        labels:
+          - dependencies
+    - title: Dependency updates
+      labels:
+        - dependencies

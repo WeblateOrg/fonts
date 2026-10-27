@@ -9,13 +9,13 @@ name: Pre-commit check
 on:
   push:
     branches-ignore:
-    - copilot/**
-    - codex/**
-    - renovate/**
-    - weblate
-    - weblate-*
-    - weblate/**
-    - dependabot/**
+      - copilot/**
+      - codex/**
+      - renovate/**
+      - weblate
+      - weblate-*
+      - weblate/**
+      - dependabot/**
   pull_request:
 
 permissions:
@@ -26,44 +26,44 @@ jobs:
     runs-on: ubuntu-26.04-arm
 
     steps:
-    - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
-      with:
-        persist-credentials: false
-    - uses: $/.github/actions/pre-commit-setup
-    - name: detect method
-      id: detect
-      run: |
-        if test -f pyproject.toml ; then
-          echo "method=pep735" >> "$GITHUB_OUTPUT"
-        else
-          echo "method=uvx" >> "$GITHUB_OUTPUT"
-        fi
-    - name: pre-commit (PEP 735)
-      if: steps.detect.outputs.method == 'pep735'
-      run: |
-        uv run --only-group pre-commit prek run --all-files --show-diff-on-failure
-        du -h --max-depth=1 ~/.cache/prek ~/.cache/prek/cache ~/.cache/kingfisher || true
-        uv run --only-group pre-commit prek cache gc
-        du -h --max-depth=1 ~/.cache/prek ~/.cache/prek/cache ~/.cache/kingfisher || true
-      env:
-        RUFF_OUTPUT_FORMAT: github
-        REUSE_OUTPUT_FORMAT: github
-        GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-    - name: pre-commit (uvx)
-      if: steps.detect.outputs.method == 'uvx'
-      run: |
-        uvx prek run --all-files --show-diff-on-failure
-        du -h --max-depth=1 ~/.cache/prek ~/.cache/prek/cache ~/.cache/kingfisher || true
-        uvx prek cache gc
-        du -h --max-depth=1 ~/.cache/prek ~/.cache/prek/cache ~/.cache/kingfisher || true
-      env:
-        RUFF_OUTPUT_FORMAT: github
-        REUSE_OUTPUT_FORMAT: github
-        GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-    - name: diff
-      run: git diff
-      if: always()
-    - uses: pre-commit-ci/lite-action@062bca0919bc9d6e66755cc05074b70c77e111fc # v1.2.0
-      if: always()
-      with:
-        msg: 'chore(pre-commit): apply code formatting'
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - uses: $/.github/actions/pre-commit-setup
+      - name: detect method
+        id: detect
+        run: |
+          if test -f pyproject.toml ; then
+            echo "method=pep735" >> "$GITHUB_OUTPUT"
+          else
+            echo "method=uvx" >> "$GITHUB_OUTPUT"
+          fi
+      - name: pre-commit (PEP 735)
+        if: steps.detect.outputs.method == 'pep735'
+        run: |
+          uv run --only-group pre-commit prek run --all-files --show-diff-on-failure
+          du -h --max-depth=1 ~/.cache/prek ~/.cache/prek/cache ~/.cache/kingfisher || true
+          uv run --only-group pre-commit prek cache gc
+          du -h --max-depth=1 ~/.cache/prek ~/.cache/prek/cache ~/.cache/kingfisher || true
+        env:
+          RUFF_OUTPUT_FORMAT: github
+          REUSE_OUTPUT_FORMAT: github
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: pre-commit (uvx)
+        if: steps.detect.outputs.method == 'uvx'
+        run: |
+          uvx prek run --all-files --show-diff-on-failure
+          du -h --max-depth=1 ~/.cache/prek ~/.cache/prek/cache ~/.cache/kingfisher || true
+          uvx prek cache gc
+          du -h --max-depth=1 ~/.cache/prek ~/.cache/prek/cache ~/.cache/kingfisher || true
+        env:
+          RUFF_OUTPUT_FORMAT: github
+          REUSE_OUTPUT_FORMAT: github
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: diff
+        run: git diff
+        if: always()
+      - uses: pre-commit-ci/lite-action@062bca0919bc9d6e66755cc05074b70c77e111fc # v1.2.0
+        if: always()
+        with:
+          msg: "chore(pre-commit): apply code formatting"
