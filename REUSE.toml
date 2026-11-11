@@ -18,7 +18,8 @@ path = [
   "REUSE.toml",
   "setup.cfg",
   "src/weblate_fonts/static/weblate_fonts/source-code-pro.css",
-  "src/weblate_fonts/static/weblate_fonts/source-sans-3.css"
+  "src/weblate_fonts/static/weblate_fonts/source-sans-3.css",
+  "uv.lock"
 ]
 precedence = "aggregate"
 SPDX-FileCopyrightText = "Michal Čihař <michal@weblate.org>"
